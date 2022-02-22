@@ -10,13 +10,8 @@ class Solution {
         // }
         
         for(char c: columnTitle.toCharArray()){
-            ans = (ans * 26) + val(c);
+            ans = (ans * 26) + c -'A' + 1;
         }
         return ans;
-    }
-    
-    
-    public int val(char c){
-        return c - 'A'+1;
     }
 }
