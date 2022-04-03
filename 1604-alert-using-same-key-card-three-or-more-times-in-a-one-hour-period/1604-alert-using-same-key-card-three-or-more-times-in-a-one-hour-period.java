@@ -2,7 +2,7 @@ class Solution {
 
     public List<String> alertNames(String[] keyName, String[] keyTime) {
         HashMap<String, List<String>> map = new HashMap<>();
-        Set<String> set = new TreeSet<>();
+        List<String> res = new ArrayList<>();
         for (int i = 0; i < keyName.length; i++) {
             String n = keyName[i];
             String t = keyTime[i];
@@ -18,15 +18,13 @@ class Solution {
             map.put(n, l);
         }
         // System.out.println(map);
-        List<String> d = Arrays.asList("11:00","11:01","11:02");
+//         List<String> d = Arrays.asList("11:00","11:01","11:02");
 
-        System.out.println(checkList(d));
+//         System.out.println(checkList(d));
         for(Map.Entry<String,List<String>> e: map.entrySet()){
-            if(checkList(e.getValue())) set.add(e.getKey());
+            if(checkList(e.getValue())) res.add(e.getKey());
         }
-        
-        List<String> res = new ArrayList<>();
-        res.addAll(set);
+        Collections.sort(res);
         return res;
     }
 
