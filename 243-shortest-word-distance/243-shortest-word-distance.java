@@ -21,21 +21,17 @@ class Solution {
     //     }
 
     public int shortestDistance(String[] wordsDict, String word1, String word2) {
-        int p1 = 0;
-        int p2 = 0;
-        int res = Integer.MAX_VALUE;
-        boolean found1 = false;
-        boolean found2 = false;
+        int p1 = -1;
+        int p2 = -1;
+        int res = wordsDict.length;
         for (int i = 0; i < wordsDict.length; i++) {
             if (wordsDict[i].equals(word1)) {
                 p1 = i;
-                found1 = true;
             }
             if (wordsDict[i].equals(word2)) {
                 p2 = i;
-                found2 = true;
             }
-            if(found1&&found2){
+            if(p1 !=-1 && p2!=-1){
                 res = Math.min(res, Math.abs(p1-p2));
             }
         }
