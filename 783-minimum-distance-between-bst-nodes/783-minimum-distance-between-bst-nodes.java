@@ -18,7 +18,6 @@ class Solution {
         Set<Integer> set = new TreeSet<>();
         int min = Integer.MAX_VALUE;
         add(root, set);
-        if(set.isEmpty()) return 0;
         List<Integer> arr = new ArrayList<>();
         arr.addAll(set);
         for(int i=1; i<set.size();i++){
@@ -29,11 +28,8 @@ class Solution {
     }
     public void add(TreeNode root, Set<Integer> set){
         if(root == null) return;
-        if(set.contains(root.val)){
-            set.clear();
-            return;
-        }
-        else set.add(root.val);
+        
+        set.add(root.val);
         add(root.left, set);
         add(root.right, set);
     }
