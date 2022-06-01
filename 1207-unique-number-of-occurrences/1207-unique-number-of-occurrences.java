@@ -4,8 +4,10 @@ class Solution {
         for(int a: arr){
             map.put(a, map.getOrDefault(a, 0)+1);
         }
-        Set<Integer> set = new HashSet<>(map.values());
-        
-        return set.size()==map.values().size();
+        Set<Integer> set = new HashSet<>();
+        for(int val : map.values()){
+            if(!set.add(val)) return false;
+        }
+        return true;
     }
 }
