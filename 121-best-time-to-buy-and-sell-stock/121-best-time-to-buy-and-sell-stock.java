@@ -11,7 +11,7 @@ class Solution {
             }
             if(a>buy){
                 sell = a;
-                profit = Math.max(profit, sell-buy);
+                profit = Math.max(profit, a-buy);
             }
         }
         return profit;
