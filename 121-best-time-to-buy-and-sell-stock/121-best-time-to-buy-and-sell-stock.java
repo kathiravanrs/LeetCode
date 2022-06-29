@@ -9,7 +9,7 @@ class Solution {
                 buy = a;
                 continue;
             }
-            if(a>=buy){
+            if(a>buy){
                 sell = a;
                 profit = Math.max(profit, sell-buy);
             }
