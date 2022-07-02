@@ -1,34 +1,22 @@
 class Solution {
 
-    public int maxArea(int h, int w, int[] horizontalCuts, int[] verticalCuts) {
-        List<Long> hz = new ArrayList<>();
-        List<Long> vr = new ArrayList<>();
-        hz.add(0l);
-        vr.add(0l);
-        for (int a : horizontalCuts) {
-            hz.add((long) a);
-        }
-        for (int a : verticalCuts) {
-            vr.add((long) a);
-        }
-        hz.add((long) h);
-        vr.add((long) w);
+    public int maxArea(int h, int w, int[] hc, int[] vc) {
+        Arrays.sort(hc);
+        Arrays.sort(vc);
 
-        Collections.sort(hz);
-        Collections.sort(vr);
+        long l = hc[0];
+        long b = vc[0];
+        for (int i = 1; i < hc.length; i++) {
+            long diffL = hc[i] - hc[i - 1];
+            l = Math.max(diffL, l);
+        }
+        for (int j = 1; j < vc.length; j++) {
+            long diffW = vc[j] - vc[j-1];
+            b = Math.max(b, diffW);
+        }
+        l = Math.max(h-hc[hc.length-1], l);
+        b = Math.max(w-vc[vc.length-1], b);
 
-        long ml = 0;
-        long mw = 0;
-        for (int i = 0; i < hz.size() - 1; i++) {
-            long l = hz.get(i + 1) - hz.get(i);
-            ml = Math.max(ml, l);
-        }
-        for (int j = 0; j < vr.size() - 1; j++) {
-            long b = vr.get(j + 1) - vr.get(j);
-            mw = Math.max(mw, b);
-            // int area =((int) (l*b)%(1000000007));
-            // max = Math.max(max, area);
-        }
-        return (int) ((ml * mw) % 1000000007);
+        return (int) ((l * b) % 1000000007);
     }
 }
