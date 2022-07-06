@@ -1,14 +1,10 @@
 class Solution {
     public int climbStairs(int n) {
-        int[] a = new int[n+1];
-        for(int i=1; i<=n;i++){
-            if(i<3) a[i] = i;
-            else{
-                a[i] = a[i-1]+a[i-2];
-            }
+        int[] arr = new int[n+1];
+        for(int i = 0;i<=n;i++){
+            if(i<3) arr[i] = i;
+            else arr[i] = arr[i-1]+arr[i-2];
         }
-        return a[n];
+        return arr[n];
     }
-    
-    
 }
