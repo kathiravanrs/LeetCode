@@ -26,7 +26,6 @@ class Solution {
                 }
             }
         }
-        if(!b.isEmpty()) return false;
-        return true;
+        return (b.isEmpty());
     }
 }
