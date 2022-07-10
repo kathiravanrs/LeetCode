@@ -1,9 +1,9 @@
 class Solution {
     public boolean isValid(String s) {
         
-        char[] a = s.toCharArray();
         Stack<Character> b = new Stack<>();
-        for(char c : a){
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
             if(c=='(' || c=='[' || c=='{'){
                 b.push(c);
             }
@@ -17,7 +17,6 @@ class Solution {
                 else if(c=='}'){
                     if(v!='{') return false;
                     else b.pop();
-
                 }
                 else if(c==']'){
                     if(v!='[') return false;
