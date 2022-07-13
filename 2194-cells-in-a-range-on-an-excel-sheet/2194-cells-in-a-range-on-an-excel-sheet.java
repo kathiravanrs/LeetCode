@@ -7,7 +7,6 @@ class Solution {
         List<String> ans = new ArrayList<>();
         for(char c=row1;c<=row2;c++){
             for(char i=col1;i<=col2;i++){
-                
                 ans.add(c+""+i);
             }
         }
