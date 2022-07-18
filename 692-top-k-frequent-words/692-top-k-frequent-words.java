@@ -12,7 +12,6 @@ class Solution {
             set.add(s);
             countMap.put(count, set);
         }
-        System.out.println(countMap);
         
         for(Set<String> set: countMap.values()){
             for(String s: set) {
