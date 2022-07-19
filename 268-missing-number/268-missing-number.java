@@ -8,4 +8,5 @@ class Solution {
         }
         return nums[0]==0?nums.length:0;
     }
+
 }
