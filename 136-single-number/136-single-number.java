@@ -1,13 +1,9 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
+        int val = 0;
         for(int a:nums){
-            if(set.contains(a)) set.remove(a);
-            else set.add(a);
+            val ^=a;
         }
-        for(int a: set){
-            return a;
-        }
-                    return 0;
+        return val;
     }
 }
