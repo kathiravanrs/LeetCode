@@ -4,15 +4,11 @@ class Solution {
         Set<List<Integer>> ans = new HashSet<>();
         for(int i=0;i<nums.length-2;i++){
             int cur = nums[i];
-            List<List<Integer>> pairs = twoSum(nums, i+1, -cur);
-            for(List<Integer> l: pairs){
-                if(!l.isEmpty()) ans.add(l);
-            }
+            twoSum(nums, i+1, -cur, ans);
         }
         return new ArrayList<List<Integer>>(ans);
     }
-    public List<List<Integer>> twoSum(int[] nums, int l, int t){
-        List<List<Integer>> list = new ArrayList<>();
+    public Set<List<Integer>> twoSum(int[] nums, int l, int t, Set<List<Integer>> list){
         int r = nums.length-1;
         while(l<r){
             if(nums[l]+nums[r]==t){
