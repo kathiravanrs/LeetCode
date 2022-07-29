@@ -4,10 +4,9 @@ class Solution {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for(int a: sticks) pq.add(a);
         while(pq.size()>1){
-            int l1 = pq.poll();
-            int l2 = pq.poll();
-            cost += (l1+l2);
-            pq.add(l1+l2);
+            int sum = pq.poll() + pq.poll();
+            cost += (sum);
+            pq.add(sum);
         }
         return cost;
     }
