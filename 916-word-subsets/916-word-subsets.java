@@ -11,18 +11,19 @@ class Solution {
         }
         
         List<String> ans = new ArrayList<>();
-        for(String a: words1){
+        search: for(String a: words1){
             Map<Character, Integer> temp = new HashMap<>();
             for(char c: a.toCharArray()) temp.put(c, temp.getOrDefault(c,0)+1);
-            boolean flag = true;
+            // boolean flag = true;
             for(char c: map.keySet()){
                 if(!temp.containsKey(c) || temp.get(c)<map.get(c)){
-                    flag = false;
-                    break;
+                    continue search;
+                    // flag = false;
+                    // break;
                 }
                 
             }
-            if(flag) ans.add(a);
+            ans.add(a);
         }
         return ans;
     }
