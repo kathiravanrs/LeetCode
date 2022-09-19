@@ -17,7 +17,6 @@ class Solution {
                 l.add(fullPath);
             }            
         }
-        System.out.println(map);
         for(List<String> l: map.values()){
             if(l.size()>1) ans.add(l);
         }
