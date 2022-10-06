@@ -8,13 +8,12 @@ class TimeMap {
         TreeMap<Integer, String> cur = map.getOrDefault(key, new TreeMap<>());
         cur.put(timestamp, value);
         map.put(key, cur);
-        // System.out.println(map);
     }
     
     public String get(String key, int timestamp) {
         if(!map.containsKey(key)) return "";
         TreeMap<Integer, String> cur = map.get(key);
-        if(cur.containsKey(timestamp)) return cur.get(timestamp);
+        // if(cur.containsKey(timestamp)) return cur.get(timestamp);
         Integer low = cur.floorKey(timestamp);
         return low==null? "":cur.get(low);
     }
