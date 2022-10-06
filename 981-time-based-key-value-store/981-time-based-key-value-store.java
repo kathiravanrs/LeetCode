@@ -12,9 +12,9 @@ class TimeMap {
     
     public String get(String key, int timestamp) {
         if(!map.containsKey(key)) return "";
-        // TreeMap<Integer, String> cur = ;
-        Integer low = map.get(key).floorKey(timestamp);
-        return low==null? "":map.get(key).get(low);
+        TreeMap<Integer, String> cur = map.get(key);
+        Integer low = cur.floorKey(timestamp);
+        return low==null? "":cur.get(low);
     }
 }
 
