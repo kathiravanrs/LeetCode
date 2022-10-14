@@ -3,8 +3,9 @@ class Solution {
         Map<Integer, Integer> map = new HashMap<>();
         int max = 0;
         for(int i = lowLimit;i<=highLimit;i++){
-            map.put(dSum(i), map.getOrDefault(dSum(i),0)+1);
-            max = Math.max(max, map.get(dSum(i)));
+            int val = dSum(i);
+            map.put(val, map.getOrDefault(val,0)+1);
+            max = Math.max(max, map.get(val));
         }
         return max;
     }
