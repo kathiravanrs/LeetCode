@@ -12,7 +12,6 @@ class Solution {
             Collections.sort(l);
             m.put(i, l);
         }
-        System.out.println(m);
 
         List<String> res = new ArrayList<>();
         int count = 0;
