@@ -12,7 +12,7 @@ class Solution {
             l.add(s);
             map.put(str, l);
         }
-        System.out.println(map);
+        // System.out.println(map);
         List<List<String>> list = new ArrayList<>();
         for(List<String> l:map.values()){
             list.add(l);
