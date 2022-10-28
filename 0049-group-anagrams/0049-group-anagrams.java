@@ -6,8 +6,11 @@ class Solution {
             for(char a: s.toCharArray()){
                 str.put(a, str.getOrDefault(a, 0)+1);
             }
-            if(map.containsKey(str)) map.get(str).add(s);
-            else map.put(str, new ArrayList<String>(Arrays.asList(s)));
+            List<String> l = map.getOrDefault(str, new ArrayList<String>());
+            // if(map.containsKey(str)) map.get(str).add(s);
+            // else map.put(str, new ArrayList<String>(Arrays.asList(s)));
+            l.add(s);
+            map.put(str, l);
         }
         System.out.println(map);
         List<List<String>> list = new ArrayList<>();
